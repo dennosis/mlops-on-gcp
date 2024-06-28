@@ -44,7 +44,9 @@ steps:
   - 'ENABLE_TUNING=$_ENABLE_TUNING'
   dir: $_PIPELINE_FOLDER
 
-
-logs_bucket: REGIONAL_USER_OWNED_BUCKET
 # Push the custom image to Container Registry 
 images: ['gcr.io/$PROJECT_ID/$_TFX_IMAGE_NAME:$TAG_NAME']
+
+logsBucket: REGIONAL_USER_OWNED_BUCKET
+options:
+  logging: GCS_ONLY
