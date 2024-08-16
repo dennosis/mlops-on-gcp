@@ -46,7 +46,6 @@ steps:
 
 # Push the custom image to Container Registry 
 images: ['gcr.io/$PROJECT_ID/$_TFX_IMAGE_NAME:$TAG_NAME']
-
+logsBucket: 'gs://$PROJECT_ID'
 options:
-  defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
-  logging: 'CLOUD_LOGGING_ONLY'
+  logging: GCS_ONLY
